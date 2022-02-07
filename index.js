@@ -80,21 +80,21 @@ const promptUser = () => {
       {
         type: "list",
         message: "Choose an option",
-        name: "action",
+        name: "selection",
         choices: [
           "View all Departments",
           "View all Roles",
           "View all Employees",
           "Add a Department",
           "Add a Role",
-          "Add an Employee",
           "Update an Employee's Role",
+          "Add an Employee",
           "Exit",
         ],
       },
     ])
     .then(function (answer) {
-      switch (answer.action) {
+      switch (answer.selection) {
         case "View all Departments":
           viewDepartments();
           break;
@@ -110,11 +110,11 @@ const promptUser = () => {
         case "Add a Role":
           promptRole();
           break;
+        case "Update an Employee's Role":
+          updEmp();
+          break;
         case "Add an Employee":
           promptEmployee();
-          break;
-        case "update an Employee Role":
-          updEmp();
           break;
         case "Exit":
           console.log("Have a nice day!");
@@ -320,19 +320,19 @@ const updEmp = () => {
     ])
     .then((answer) => {
       let empChoice;
-      for (var i = 0; 1 < employSelect.length; i++) {
+      for (var i = 0; i < employSelect.length; i++) {
         if (employSelect[i] === answer.id) {
           empChoice = i + 1;
         }
       }
       let newRole;
-      for (var i = 0; 1 < roleSelect.length; i++) {
+      for (var i = 0; i < roleSelect.length; i++) {
         if (roleSelect[i] === answer.role_id) {
           newRole = i + 1;
         }
       }
       let newMgr;
-      for (var i = 0; 1 < mgrSelect.length; i++) {
+      for (var i = 0; i < mgrSelect.length; i++) {
         if (mgrSelect[i] === answer.manager_id) {
           newMgr = i + 1;
         }
