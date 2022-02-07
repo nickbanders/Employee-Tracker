@@ -13,15 +13,15 @@ VALUES
     ('production-manager', '70000.00', '2'),
     ('executive-manager', '90000.00', '3');
 
-INSERT INTO employee (first_name, last_name, role_id, manager_id)
+INSERT INTO employee (first_name, last_name, role_id, is_manager, manager_id)
 VALUES
-    ('Leoni', 'Walmsley', '1', NULL),
-    ('Emmett', 'Kidd', '1', '1'),
-    ('Abi', 'Parry', '2', '1'),
-    ('Heath', 'Robles', '3', '3'),
-    ('Lenny', 'Orr', '4', '3'),
-    ('James', 'Donovan', '4', '2'),
-    ('Cavan', 'Craft', '5', '2'),
-    ('Anabelle', 'Case', '6', '3'),
-    ('Gabriella', 'Bradford', '7', '3'),
-    ('Stephen', 'Leach', '7', '3');
+    ('Leoni', 'Walmsley', '1', false, '1'),
+    ('Emmett', 'Kidd', '1', false, '1'),
+    ('Abi', 'Parry', '2', false, '1'),
+    ('Heath', 'Robles', '3', true, '3'),
+    ('Lenny', 'Orr', '4', false, '2'),
+    ('James', 'Donovan', '4', false, '2'),
+    ('Cavan', 'Craft', '5', false, '2'),
+    ('Anabelle', 'Case', '6', true, '3'),
+    ('Gabriella', 'Bradford', '7', true, NULL),
+    ('Stephen', 'Leach', '7', true, NULL);
